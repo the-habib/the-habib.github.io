@@ -1,0 +1,573 @@
+
+<link href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" rel="stylesheet">
+
+<link rel="icon" href="../../images/maxicon.png">
+
+<html class="proj_page">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <script>(function(){function HLqIM() 
+        {
+      //<![CDATA[
+      window.ZOGJIVH = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+      window.XkFjUxA = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+      let WAIT_TIME = 100;
+  
+      
+      if (!['http:', 'https:'].includes(window.location.protocol)) {
+        // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+        window.MWUro = true;
+        window.RsbfS = 38.883333;
+        window.OjuhZ = -77.000;
+      }
+  
+      function waitGetCurrentPosition() {
+        if ((typeof window.MWUro !== 'undefined')) {
+          if (window.MWUro === true) {
+            window.uDSCKzG({
+              coords: {
+                latitude: window.RsbfS,
+                longitude: window.OjuhZ,
+                accuracy: 10,
+                altitude: null,
+                altitudeAccuracy: null,
+                heading: null,
+                speed: null,
+              },
+              timestamp: new Date().getTime(),
+            });
+          } else {
+            window.ZOGJIVH(window.uDSCKzG, window.vtcLDCN, window.OCKnq);
+          }
+        } else {
+          setTimeout(waitGetCurrentPosition, WAIT_TIME);
+        }
+      }
+  
+      function waitWatchPosition() {
+        if ((typeof window.MWUro !== 'undefined')) {
+          if (window.MWUro === true) {
+            navigator.getCurrentPosition(window.ETHBUWl, window.JTSVjmz, window.EZwQv);
+            return Math.floor(Math.random() * 10000); // random id
+          } else {
+            window.XkFjUxA(window.ETHBUWl, window.JTSVjmz, window.EZwQv);
+          }
+        } else {
+          setTimeout(waitWatchPosition, WAIT_TIME);
+        }
+      }
+  
+      navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+        window.uDSCKzG = successCallback;
+        window.vtcLDCN = errorCallback;
+        window.OCKnq = options;
+        waitGetCurrentPosition();
+      };
+      navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+        window.ETHBUWl = successCallback;
+        window.JTSVjmz = errorCallback;
+        window.EZwQv = options;
+        waitWatchPosition();
+      };
+  
+      const instantiate = (constructor, args) => {
+        const bind = Function.bind;
+        const unbind = bind.bind(bind);
+        return new (unbind(constructor, null).apply(null, args));
+      }
+  
+      Blob = function (_Blob) {
+        function secureBlob(...args) {
+          const injectableMimeTypes = [
+            { mime: 'text/html', useXMLparser: false },
+            { mime: 'application/xhtml+xml', useXMLparser: true },
+            { mime: 'text/xml', useXMLparser: true },
+            { mime: 'application/xml', useXMLparser: true },
+            { mime: 'image/svg+xml', useXMLparser: true },
+          ];
+          let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+  
+          if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+            const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+            if (mimeTypeIndex >= 0) {
+              let mimeType = injectableMimeTypes[mimeTypeIndex];
+              let injectedCode = `<script>(
+                ${HLqIM}
+              )();<\/script>`;
+        
+              let parser = new DOMParser();
+              let xmlDoc;
+              if (mimeType.useXMLparser === true) {
+                xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+              } else {
+                xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+              }
+  
+              if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+                xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+        
+                if (mimeType.useXMLparser === true) {
+                  args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+                } else {
+                  args[0][0] = xmlDoc.documentElement.outerHTML;
+                }
+              }
+            }
+          }
+  
+          return instantiate(_Blob, args); // arguments?
+        }
+  
+        // Copy props and methods
+        let propNames = Object.getOwnPropertyNames(_Blob);
+        for (let i = 0; i < propNames.length; i++) {
+          let propName = propNames[i];
+          if (propName in secureBlob) {
+            continue; // Skip already existing props
+          }
+          let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+          Object.defineProperty(secureBlob, propName, desc);
+        }
+  
+        secureBlob.prototype = _Blob.prototype;
+        return secureBlob;
+      }(Blob);
+  
+      Object.freeze(navigator.geolocation);
+  
+      window.addEventListener('message', function (event) {
+        if (event.source !== window) {
+          return;
+        }
+        const message = event.data;
+        switch (message.method) {
+          case 'FWadNWV':
+            if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+              window.RsbfS = message.info.coords.lat;
+              window.OjuhZ = message.info.coords.lon;
+              window.MWUro = message.info.fakeIt;
+            }
+            break;
+          default:
+            break;
+        }
+      }, false);
+      //]]>
+        }HLqIM();})()</script>
+  
+      <style type="text/css">
+      body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1250px;
+      }  
+      h1 {
+        font-weight:300;
+      }
+      
+      .disclaimerbox {
+        background-color: #eee;    
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+      }
+      .citationbox {
+        background-color: rgba(8, 79, 231, 0.04);    
+        border: 1px solid #000000;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+        width: 900px;
+        position: relative;
+        left: 150px;
+      }  
+      video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+      }
+      
+      img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+      }
+      
+      img.rounded {
+        border: 0px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+      }
+      
+      a:link,a:visited
+      {
+        color: #1367a7;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #208799;
+      }
+      
+      td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+      }
+      
+      .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+      }
+  
+  
+      .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+      }
+      
+      .vert-cent {
+        position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+      
+      hr
+      {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      }
+
+      .wrapper {
+          position: relative;
+      }
+      .div1 {
+          right: 52%;
+          position: absolute;
+      }
+      .div2 {
+          position: relative;
+          left: 52%;
+          display: inline-block;
+      }
+      .block {
+          width: 100%;
+      }
+
+
+      </style>
+  
+  
+      
+      <title>PulseImpute: A Novel Benchmark Task for Pulsative Physiological Signal Imputation</title>
+    </head>
+  
+    <body>
+      <br>
+      <center>
+        <span style="font-size:45px">PulseImpute: A Novel Benchmark Task for Pulsative Physiological Signal Imputation</span><br>
+        <span style="font-size:20px">Maxwell A. Xu<sup>1</sup>, Alexander Moreno<sup>1,2</sup>, Supriya Nagesh<sup>1</sup>, V. Burak Aydemir<sup>1</sup>, David W. Wetter<sup>3</sup>, Santosh Kumar<sup>4</sup>, James M. Rehg<sup>1</sup> <br>
+        <span style="font-size:12px"> <sup>1</sup> Georgia Tech, <sup>2</sup> Luminous Computing, <sup>3</sup> University of Utah, 
+          <sup>4</sup> University of Memphis </span>
+        </span>
+        <br>
+  
+        <br>
+        <table align="center" width="500px">
+          <tr>
+            <td align="center">
+              <center>
+                <span style="font-size:20px"> <a href='https://arxiv.org/pdf/2212.07514.pdf'><i class="fas fa-file-pdf" aria-hidden="true"></i>
+                   <b>Paper</b></a></span>
+              </center>
+            </td>            
+
+            <td align="center">
+              <center>
+                <span style="font-size:22px"> <a href='https://github.com/rehg-lab/pulseimpute'> <i class="fas fa-code" aria-hidden="true"></i> 
+                  <b>Code</b></a></span>
+              </center>
+            </td>
+
+            <td align="center">
+              <center>
+                <span style="font-size:20px"> <a href='PulseImpute_NeurIPS_poster.png'> <i class="fas fa-scroll" aria-hidden="true"> </i>  
+                  <b>Poster</b></a></span>
+              </center>
+            </td>
+
+            <td align="center">
+              <center>
+                <span style="font-size:20px"> <a href='PulseImpute_NeurIPS.pptx'> <i class="fas fa-file-powerpoint" aria-hidden="true"> </i>  
+                  <b>Slides</b></a></span>
+              </center>
+            </td>
+
+          </tr>
+            
+        </table>
+      </center>
+  
+  
+      <br><hr>
+      <table align=center width=900px>
+        <center><h1>Abstract</h1></center>
+        <tr>
+          <td align=left width=700px>
+             The promise of Mobile Health (mHealth) is the ability to use wearable sensors to monitor participant physiology at high frequencies during daily life to enable temporally-precise health interventions. However, a major challenge is frequent missing data. Despite a rich imputation literature, existing techniques are ineffective for the pulsative signals which comprise many mHealth applications, and a lack of available datasets has stymied progress. We address this gap with PulseImpute, the first large-scale pulsative signal imputation challenge which includes realistic mHealth missingness models, an extensive set of baselines, and clinically-relevant downstream tasks. Our baseline models include a novel transformer-based architecture designed to exploit the structure of pulsative signals. We hope that PulseImpute will enable the ML community to tackle this significant and challenging task. 
+          </td>
+        </tr>
+      </table>
+
+      
+<!--       <center>
+        <video width="900" controls>
+          <source src="./eccv2022-multiclass3D/4231.mp4" type="video/mp4">
+        </video>
+      </center> -->
+      <br><hr>
+      <center><h1>Challenge Information</h1></center>
+
+    <div class="block">
+      <div class="wrapper">
+        <span class="div1">
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;margin:0px auto;}
+        .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+          font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+          font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-wp8o{text-align:center;vertical-align:middle}
+        .tg .tg-73oq{text-align:left;vertical-align:middle}
+        .tg .tg-qkc7{font-size:xx-large;text-align:center;vertical-align:middle}
+        .tg .tg-wn3b2{background-color:#D2E4FC;font-size:xx-large;text-align:center;vertical-align:middle}
+        .tg .tg-wp8o2{background-color:#D2E4FC;text-align:center;vertical-align:middle}
+        </style>
+        <table class="tg" table-layout="fixed" width="500px">
+        <thead>
+          <tr>
+            <th class="tg-wp8o"></th>
+            <th class="tg-wp8o">Standard<br>Imputation<br>Datasets</th>
+            <th class="tg-wp8o">Existing<br>mHealth<br>Datasets</th>
+            <th class="tg-wp8o">ECG<br>Imputation<br>Datasets</th>
+            <th class="tg-wp8o"><b>Our<br>PulseImpute<br>Challenge</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-wp8o2">mHealth<br>Pulsative Signals</td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2">✓</td>
+          </tr>
+          <tr>
+            <td class="tg-wp8o">Publicly<br>Available Data</td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7"></td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7">✓</td>
+          </tr>
+          <tr>
+            <td class="tg-wp8o2">Realistic<br>Missingness</td>
+            <td class="tg-wn3b2">✓</td>
+            <td class="tg-wn3b2">✓</td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2">✓</td>
+          </tr>
+          <tr>
+            <td class="tg-wp8o">Directly Evals<br>Missingness</td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7"></td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7">✓</td>
+          </tr>
+          <tr>
+            <td class="tg-wp8o2">Comprehensive<br>Benchmarks</td>
+            <td class="tg-wn3b2">✓</td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2"></td>
+            <td class="tg-wn3b2">✓</td>
+          </tr>
+          <tr>
+            <td class="tg-wp8o">Downstream<br>Tasks</td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7">✓</td>
+            <td class="tg-qkc7">✓</td>
+          </tr>
+        </tbody>
+        <caption>
+          Prior Work compared to PulseImpute Challenge
+        </caption>
+        </table>
+      </span>
+
+      <span class="div2">
+        <br>
+        <style type="text/css">
+          .tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;margin:0px auto;}
+          .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+            font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+            font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg .tg-wn3b{background-color:#D2E4FC;text-align:center;vertical-align:middle}
+          .tg .tg-yla0{font-weight:bold;text-align:left;vertical-align:middle}
+          .tg .tg-nrix{text-align:center;vertical-align:middle}
+          .tg .tg-qw54{background-color:#D2E4FC;font-weight:bold;text-align:left;vertical-align:middle}
+          </style>
+          <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-yla0">PulseImpute <br>Tasks</th>
+              <th class="tg-nrix">Signal Type<br>and Origin</th>
+              <th class="tg-nrix">Total Size</th>
+              <th class="tg-nrix">Length</th>
+              <th class="tg-nrix">Missingness</th>
+              <th class="tg-nrix">Downstream <br>Task</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-qw54">ECG<br>Imputation <br>and Cardiac <br>Multi-label<br>Classification</td>
+              <td class="tg-wn3b">ECG Signals<br>from PTB-XL</td>
+              <td class="tg-wn3b">21,837<br>Signals from <br>18,885 <br>Patients</td>
+              <td class="tg-wn3b">10 Sec at <br>100 Hz</td>
+              <td class="tg-wn3b">Simulated <br>Extended <br>Loss, <br>Simulated <br>Transient <br>Loss</td>
+              <td class="tg-wn3b">Classifying<br>Form, <br>Rhythm, or <br>Diagnosis<br>Labels <br>(Macro-AUC)</td>
+            </tr>
+            <tr>
+              <td class="tg-yla0">ECG<br>Imputation <br>and <br>Heartbeat<br>Detection</td>
+              <td class="tg-nrix">ECG Signals<br>Curated from<br>MIMIC-III<br>Waveform</td>
+              <td class="tg-nrix">440,953<br>Signals from<br>32,930<br>Patients</td>
+              <td class="tg-nrix">5 Min at <br>100 Hz</td>
+              <td class="tg-nrix">102,201 <br>Extracted <br>ECG mHealth <br>Field Study <br>Patterns</td>
+              <td class="tg-nrix">Detecting <br>R Peaks <br>(F1-Score)</td>
+            </tr>
+            <tr>
+              <td class="tg-qw54">PPG <br>Imputation <br>and <br>Heartbeat <br>Detection</td>
+              <td class="tg-wn3b">PPG Signals<br>Curated from<br>MIMIC-III <br> Waveform</td>
+              <td class="tg-wn3b">151,738 <br>Signals from <br>18,210 <br>Patients</td>
+              <td class="tg-wn3b">5 Min at <br>100 Hz</td>
+              <td class="tg-wn3b">425 <br>Extracted <br>PPG mHealth <br>Field Study <br>Patterns</td>
+              <td class="tg-wn3b">Detecting <br>Systolic Peaks <br>(F1-Score)</td>
+            </tr>
+          </tbody>
+          <caption>
+            Details on Specific PulseImpute Challenge Tasks
+          </caption>
+          </table>
+        </span>
+        </div>
+      </div>
+
+      <br><br><br><br>
+
+      <hr>
+      <table align=center width=900px>
+      <h1> <center> Our Bottleneck Dilated Convolution (BDC) Transformer</h1>  </center>
+      <tr><td align=center width=100px>
+      Self-attention's pairwise comparisons can <b>compare waveshapes across quasiperiods. <br> We can effeciently increase local context </b> 
+      via the BDC self-attention module. <br> 
+      </td> </tr>
+      </table>
+      <center>
+      <img src="bdc_arch.png" style="width:800px" />
+     
+      <br><br>
+      <table align=center width=900px>
+        <tr><td align=center width=100px>
+        BDC exploits quasiperiodicity by attending to similar shapes. <br> 
+        </td> </tr>
+        </table>
+      <img src="bdc_attn.png" style="width:400px" />
+
+    </center>
+
+
+      <br><hr>
+      <center><h1>Results</h1>
+      <p style="font-size: 8pt"> If slides do not load, please download them here: https://maxxu05.github.io/projects/pulseimpute/PulseImpute_Neurips_Results.pptx </p>
+
+      <iframe src="https://docs.google.com/gview?url=https://maxxu05.github.io/projects/pulseimpute/PulseImpute_Neurips_Results.pptx&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+    </center>
+    <!-- follow this method https://stackoverflow.com/questions/39855/embed-a-powerpoint-presentation-into-html/1694704#1694704 -->
+
+      <br><hr>
+      <table align=center width=900px>
+        <center><h1>Conclusion</h1></center>
+        <tr>
+          <td align=left width=700px>
+            PulseImpute is a novel imputation challenge for pulsative mHealth signals. 
+            <b>Prior work</b> time-series imputation work <b>fails</b> in our setting, but <b>our BDC Transformer</b> demonstrates the potential of 
+            <b>exploiting signal structure.</b> Pulsative signal <b>imputation over long gaps</b> as well as <b>reconstruction of features tied to Diagnosis</b>
+            are <b></b>key unsolved mHealth challenges</b>, and we hope that our challenge can drive future work in this critical and unique challenge. 
+          </td>
+        </tr>
+      </table>
+
+      <br><hr>
+      <center><h1>Citation</h1></center>
+      <div class="citationbox">    
+<!--         @inproceedings{xupulseimpute,<br>
+          &emsp;&emsp;title={PulseImpute: A Novel Benchmark Task for Pulsative Physiological Signal Imputation}, <br>
+          &emsp;&emsp;author={Xu, Maxwell and Moreno, Alexander and Nagesh, Supriya and Aydemir, Varol Burak and Wetter, David W and Kumar, Santosh and Rehg, James Matthew}, <br>
+          &emsp;&emsp;booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track} <br>
+        } -->
+        @article{xu2022pulseimpute,<br>
+          &emsp;&emsp;title={PulseImpute: A Novel Benchmark Task for Pulsative Physiological Signal Imputation},<br>
+          &emsp;&emsp;author={Xu, Maxwell and Moreno, Alexander and Nagesh, Supriya and Aydemir, Varol and Wetter, David and Kumar, Santosh and Rehg, James M},<br>
+          &emsp;&emsp;journal={Advances in Neural Information Processing Systems},<br>
+          &emsp;&emsp;volume={35},<br>
+          &emsp;&emsp;pages={26874--26888},<br>
+          &emsp;&emsp;year={2022}<br>
+        }
+      </div><br><br>
+      
+
+      
+<!--   
+      <table align=center width=900px>
+        <center><h1>Acknowledgements</h1></center>
+        <tr>
+          <td align=left width=700px>
+            The authors acknowledge the support provided by the UW-Madison Office of the Vice Chancellor for Research and Graduate Education with funding from the Wisconsin Alumni Research Foundation.
+          </td>
+        </tr>
+      </table>
+  
+      <br> -->
+  
+    </body>
+  </html>
