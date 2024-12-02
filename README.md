@@ -1,4 +1,4 @@
 # Personal Website
-Please go here to see my website: [maxxu05.github.io](https://maxxu05.github.io)
+Please visit here to connected with my everyday work: [asmdhabibullah.github.io](asmdhabibullah.github.io)
 
-Thanks :)
+Thank You :)
