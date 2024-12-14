@@ -893,7 +893,7 @@ button:hover a {
 }
 
 #cv .pub-misc, .pub-misc {
-	font-size: 0.8rem
+	font-size: 0.6rem
 }
 
 .cover-links>.pub-misc {
@@ -1290,8 +1290,8 @@ button:hover a {
 }
 
 .cover {
-	height: 400px;
-	width: 350px;
+	height: auto;
+	width: 300px;
 	margin-top: 0.35rem;
 	margin-bottom: 0.35rem;
 	margin-left: 0.35rem;
@@ -1574,7 +1574,7 @@ header {
   opacity:1
 }
 
-#targetintro, #targetresearch, #targetedu, #targetawards, #targetwork, #targetpubs {
+#targetintro, #targetresearch, #targetedu, #targetawards, #targetwork, #targetpubs, #targetaproject, #targetskill {
   scroll-margin-top: 50px;
 }
 
