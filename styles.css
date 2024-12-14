@@ -1291,7 +1291,7 @@ button:hover a {
 
 .cover {
 	height: auto;
-	width: 300px;
+	width: 300px !important;
 	margin-top: 0.35rem;
 	margin-bottom: 0.35rem;
 	margin-left: 0.35rem;
