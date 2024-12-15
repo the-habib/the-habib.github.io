@@ -1378,7 +1378,7 @@ button:hover a {
 }
 
 .cover-title {
-	font-size: 19px;
+	font-size: 15px;
 	text-transform: capitalize;
 	font-weight: 600;
 	color: #313131
@@ -1394,12 +1394,12 @@ button:hover a {
 
 .cover-subtitle {
 	padding-top: 8px;
-	font-size: 13px;
+	font-size: 11px;
 	color: #717171
 }
 
 .cover-authors {
-	font-size: 11px
+	font-size: 10px
 }
 
 .cover-footer-wrapper {
@@ -1410,8 +1410,7 @@ button:hover a {
 
 .cover-venue, .cover-year, .cover-links {
 	font-size: 12px;
-/*	padding-top: 8px
-*/}
+}
 
 .cover-venue {
 	font-style: italic
